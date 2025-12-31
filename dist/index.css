@@ -1,0 +1,89 @@
+/* Compiled CSS for GitHub Pages */
+
+/* Fonts */
+body {
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: hsl(210,40%,99%);
+  color: hsl(215,35%,12%);
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(205,236,255,0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(173,230,235,0.2) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  letter-spacing: -0.015em;
+  background: linear-gradient(to right, hsl(205,95%,42%), hsl(205,95%,42%), hsl(170,90%,48%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism */
+.glass-morphism {
+  background-color: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Gradient border */
+.gradient-border {
+  position: relative;
+  overflow: hidden;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, hsl(205,95%,42%), hsl(170,90%,48%), hsl(205,95%,42%));
+  opacity: 0;
+  z-index: -10;
+  filter: blur(20px);
+  transition: opacity 0.3s;
+}
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* Shimmer text */
+.shimmer-text {
+  background: linear-gradient(90deg, #205 0%, #2aa9ff 25%, #205 50%, #2aa9ff 75%, #205 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Float animation */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Dark mode */
+.dark body {
+  background-color: hsl(220,40%,10%);
+  color: hsl(210,20%,95%);
+}
+.dark h1,h2,h3,h4,h5,h6 {
+  background: linear-gradient(to right, hsl(200,70%,50%), hsl(200,70%,50%), hsl(190,40%,20%));
+}
+
+/* Radius utilities */
+.radius-sm { border-radius: calc(1rem - 4px); }
+.radius-md { border-radius: calc(1rem - 2px); }
+.radius-lg { border-radius: 1rem; }
+.radius-xl { border-radius: calc(1rem + 4px); }
